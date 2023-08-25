@@ -1,36 +1,33 @@
-_________________________ FLOATSTEPPER ____________________________
+# FloatStepper 
 
 Library for rigid body interaction with two phase flow.
 Can also be used in single phase mode by setting alpha field to 1 internally and
 on boundaries.
-FloatStepper solves the added mass instability problem by calculating the added
-mass matrix of the rigid body and exploiting that in the updating of the body
-motion. With FloatStepper you no longer need outer correctors or acceleration
-relaxation to stabilise coupling. 
+FloatStepper solves the added mass instability problem by calculating the added mass matrix of the rigid body and exploiting that in the updating of the body motion. 
+With FloatStepper you no longer need outer correctors or acceleration relaxation to stabilise coupling. 
 
-Solver
+## Solver
 floatStepper
 
-Library
+## Library
 floaterMotion (code structure based on sixDoFRigidBodyMotion)
 
-Requirements
+## Requirements
 OpenFOAM-v2206 (may compile with later versions as well).
 
-Installation
+## Installation
 1. Source OpenFOAM-v2206
-2. Execute ./Allwmake from FloatStepper main directory
+2. Execute `./Allwmake` from FloatStepper main directory
 
-Testing
-Execute ./Allrun in run/circleFallingIntoWater
+## Testing
+Execute `./Allrun` in `run/circleFallingIntoWater`
 
-Note that case syntax in slightly different from sixDoFRigidBodyMotion cases.
+Note that case syntax in slightly different from `sixDoFRigidBodyMotion` cases.
 In particular:
-0.  Set application to floatStepper in system/controlDict.
-1.  Use dynamicFloaterMotionSolversFvMesh in constant/dynamicMeshDict.
-    See examples of usage in run/*/constant/dynamicMeshDict.
-    Restraints and their syntax is like sixDoFRigidBodyMotion but class names
-    are changed "sixDoFRigidBody" replaced with "floater".
+0.  Set application to `floatStepper` in `system/controlDict`.
+1.  Use `dynamicFloaterMotionSolversFvMesh` in `constant/dynamicMeshDict`.
+    See examples of usage in `run/*/constant/dynamicMeshDict`.
+    Restraints and their syntax is like `sixDoFRigidBodyMotion` but class names are changed `sixDoFRigidBody` replaced with "floater".
     Constraints are specified with two vectors e.g.
         linDirs (1 0 1);
         rotDirs (0 1 1);
