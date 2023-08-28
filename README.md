@@ -40,7 +40,7 @@ In particular:
     - `linDirs (1 0 1);`
     - `rotDirs (0 1 1);`
   
-    which means translation only along x- and y-axes and rotation only around the y-axis (default is all DoF's active). <!--- I don't understand this --->
+    which means translation only along x- and y-axes and rotation only around the y-axis (default is all DoF's active).
     The integer parameter *MaddUpdateFreq* (default 1) determines how often the (computationally expensive) added mass update is done, so setting *MaddUpdateFreq* e.g. to 3 means that the added mass matrix is only updated
     evert 3rd time step.
     Subdictionaries *constraints{}*, *solvers{}* and parameters *accelerationRelexation* and *accelerationDamping* will not be read or used by **FloatStepper**.
